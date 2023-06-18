@@ -7,7 +7,6 @@ import java.util.List;
 // BEGIN
 class App {
 
-    // App.scrabble("rkqodlw", "world"); // true
     public static boolean scrabble(String letters, String word) {
         List<String> lettersList = new ArrayList<>();
         lettersList.addAll(Arrays.asList(letters.split("")));
@@ -16,6 +15,7 @@ class App {
         wordList.addAll(Arrays.asList(word.split("")));
 
         for (String letter : wordList) {
+            letter = letter.toLowerCase();
             if (!lettersList.contains(letter)) {
                 return false;
             }

@@ -7,6 +7,8 @@ public class App {
             double square = circle.getSquare();
             int roundedSquare = (int) Math.round(square);
             System.out.println(String.valueOf(roundedSquare));
+        } catch (NegativeRadiusException e) {
+            throw new RuntimeException(e);
         } finally {
             System.out.println("Вычисление окончено");
         }

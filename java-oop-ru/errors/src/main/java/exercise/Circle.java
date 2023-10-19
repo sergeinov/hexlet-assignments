@@ -5,10 +5,7 @@ public class Circle {
     private Point center;
     private int radius;
 
-    public Circle(Point center, int radius) throws NegativeRadiusException {
-        if (radius < 0) {
-            throw new NegativeRadiusException("Радиус круга не может быть отрицательным.");
-        }
+    public Circle(Point center, int radius) {
         this.center = center;
         this.radius = radius;
     }
@@ -17,7 +14,10 @@ public class Circle {
         return radius;
     }
 
-    public double getSquare() {
+    public double getSquare() throws NegativeRadiusException {
+        if (radius < 0) {
+            throw new NegativeRadiusException("Радиус круга не может быть отрицательным.");
+        }
         return Math.PI * Math.pow(radius, 2);
     }
 }

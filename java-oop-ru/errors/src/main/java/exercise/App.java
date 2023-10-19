@@ -8,7 +8,7 @@ public class App {
             int roundedSquare = (int) Math.round(square);
             System.out.println(String.valueOf(roundedSquare));
         } catch (NegativeRadiusException e) {
-            throw new RuntimeException(e);
+            System.out.println("Не удалось посчитать площадь");
         } finally {
             System.out.println("Вычисление окончено");
         }
